@@ -26,14 +26,17 @@ exports.deleteTodo = async (req, res, next) => {
     .catch((e) => res.status(401).json({ success: false, err: e.message }));
   next();
 };
-exports.deleteAllTodo = async (req, res, next) => {
-  await Todo.deleteMany()
-    .then(() =>
-      res.status(201).json({ success: true, deleting: "All Items Gone" })
-    )
-    .catch((e) => res.status(401).json({ success: false, err: e.message }));
-  next();
-};
+
+//You create and endpoint to delete all the records in a database
+
+// exports.deleteAllTodo = async (req, res, next) => {
+//   await Todo.deleteMany()
+//     .then(() =>
+//       res.status(201).json({ success: true, deleting: "All Items Gone" })
+//     )
+//     .catch((e) => res.status(401).json({ success: false, err: e.message }));
+//   next();
+// };
 
 exports.updateTodo = async (req, res, next) => {
   const { id } = req.params;
