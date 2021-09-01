@@ -1,18 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const {
-  getTodo,
+  postUser,
+  // getTodo,
   postTodo,
   deleteTodo,
   updateTodo,
-  deleteAllTodo,
+  deleteAllUser,
+  // loginUser,
+  getUser,
 } = require("./creator");
 
-router.route("/").get(getTodo);
-router.route("/getTodo").get(getTodo);
-router.route("/postTodo").post(postTodo);
-router.route("/deleteTodo/:id").delete(deleteTodo);
-router.route("/updateTodo/:id").put(updateTodo);
-router.route("/deleteAllTodo/").delete(deleteAllTodo);
+router.route("/").get(getUser);
+// router.route("/getTodo").post(getTodo);
+// router.route("/postTodo").post(postTodo);
+router.route("/postUser").post(postUser);
+// router.route("/loginUser").post(loginUser);
+// router.route("/deleteTodo/:idTodo").delete(deleteTodo);
+// router.route("/updateTodo/:idTodo").put(updateTodo);
+router.route("/deleteAllUser/").delete(deleteAllUser);
+// router.route("/deleteAllTodo/").delete(deleteAllTodo);
 
 module.exports = router;
